@@ -43,6 +43,8 @@ li::marker { color: var(--accent); }
 .plans { margin-top: 8px; }
 .plan.featured { border-color: var(--accent); }
 .price { font: 400 2.4rem/1.1 var(--serif); margin: 0 0 16px; }
+.price-alt { margin: -8px 0 16px; color: var(--ink); }
+.price-alt s { color: var(--muted); }
 .price small { font: 400 0.95rem var(--sans); color: var(--muted); }
 table { width: 100%; border-collapse: collapse; margin: 8px 0 18px; font-size: 0.94rem; display: block; overflow-x: auto; }
 th, td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--line); min-width: 9rem; }
