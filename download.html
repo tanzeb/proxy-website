@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download — Proxy</title>
+<meta name="description" content="Download Proxy for Mac or Windows.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="mark.png" alt="" width="34" height="34"><span><b>Proxy</b><small>Delhi High Court</small></span></a>
+  <nav><a href="index.html">Home</a><a href="download.html" aria-current="page">Download</a><a href="pricing.html">Pricing</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a><a href="contact.html">Contact</a></nav>
+</header>
+<main>
+<h1>Download Proxy</h1>
+<p class="lede">Free to download and use for tracking cases and downloading orders. Proxy Pro can be started from inside the app, with a 7-day free trial.</p>
+<section class="grid">
+  <div><h2>Mac</h2>
+    <p class="fine">For Macs with Apple silicon (M1, M2, M3, M4 or later). <span id="mac-size"></span></p>
+    <p><a class="button" id="mac" href="https://github.com/tanzeb/proxy-releases/releases/latest">Download for Mac</a></p>
+  </div>
+  <div><h2>Windows</h2>
+    <p class="fine">For Windows 10 and 11. <span id="win-size"></span></p>
+    <p><a class="button" id="win" href="https://github.com/tanzeb/proxy-releases/releases/latest">Download for Windows</a></p>
+  </div>
+</section>
+<p class="fine" id="version"></p>
+
+<h2>Installing on a Mac</h2>
+<ol>
+  <li>Open the downloaded <b>Proxy</b> file and drag Proxy into <b>Applications</b>.</li>
+  <li>The first time, open it from Applications. If your Mac says it cannot check Proxy for malicious software, open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to Proxy. You only need to do this once.</li>
+</ol>
+
+<h2>Installing on Windows</h2>
+<ol>
+  <li>Open the downloaded <b>Proxy setup</b> file.</li>
+  <li>If Windows shows "Windows protected your PC", click <b>More info</b>, then <b>Run anyway</b>. You only need to do this once.</li>
+</ol>
+<p class="fine">These warnings appear because Proxy is a new app from an independent developer. Every update is signed, and Proxy checks the signature before installing it. After the first install, Proxy updates itself from inside the app.</p>
+
+<script>
+// Points the buttons straight at the newest version's installer for each computer.
+fetch('https://api.github.com/repos/tanzeb/proxy-releases/releases/latest')
+  .then((r) => (r.ok ? r.json() : Promise.reject()))
+  .then((rel) => {
+    const pick = (re) => rel.assets.find((a) => re.test(a.name))
+    const mb = (a) => `(${Math.round(a.size / 1048576)} MB)`
+    const mac = pick(/\.dmg$/i)
+    const win = pick(/setup\.exe$/i)
+    if (mac) { document.getElementById('mac').href = mac.browser_download_url; document.getElementById('mac-size').textContent = mb(mac) }
+    if (win) { document.getElementById('win').href = win.browser_download_url; document.getElementById('win-size').textContent = mb(win) }
+    document.getElementById('version').textContent = `Version ${rel.tag_name.replace(/^v/, '')}`
+  })
+  .catch(() => {})
+</script>
+</main>
+<footer>
+  <p><b>Proxy</b> · G6/15, Upper Ground Floor, Malviya Nagar, New Delhi 110017, India</p>
+  <p><a href="mailto:saif_fundoo@yahoo.co.in">saif_fundoo@yahoo.co.in</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds &amp; cancellation</a> · <a href="contact.html">Contact</a></p>
+  <p class="fine">Proxy is an independent tool. It is not an official service of, and is not affiliated with, the Delhi High Court.</p>
+</footer>
+</body>
+</html>
