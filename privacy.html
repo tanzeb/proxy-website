@@ -18,11 +18,11 @@
 </header>
 <main>
 <h1>Privacy policy</h1>
-<p class="fine">Last updated: 16 November 2026</p>
+<p class="fine">Last updated: 22 November 2026</p>
 <p>This policy explains what information Proxy ("we", G6/15, Upper Ground Floor, Malviya Nagar, New Delhi 110017, India) handles when you use the Proxy app and Proxy Pro.</p>
 
 <h2>What stays on your computer</h2>
-<p>Your list of cases, the orders downloaded for them, your notes and edits in the Suit Proceeding Sheet, and your folders stay on your own computer. We do not receive your case list or your files. Without Proxy Pro, the app only talks to the Delhi High Court's website (to look up your cases, as any visitor would) and to GitHub (to check for app updates).</p>
+<p>The orders downloaded for your cases, your notes and edits in the Suit Proceeding Sheet, and your folders stay on your own computer. We do not receive your files. Without Proxy Pro, your list of cases stays on your computer too. Without Proxy Pro, the app only talks to the Delhi High Court's website (to look up your cases, as any visitor would) and to GitHub (to check for app updates).</p>
 
 <h2>What we collect for Proxy Pro</h2>
 <table>
@@ -31,6 +31,7 @@
   <tr><td>Trial and subscription status, and the dates and amounts of your payments</td><td>To know whether Proxy Pro is active for you</td></tr>
   <tr><td>A count of how many orders have been read for your account each month</td><td>To apply the trial and fair-use limits</td></tr>
   <tr><td>The text of an order, when it is summarised or read for the Suit Proceeding Sheet</td><td>To prepare the summary and the sheet</td></tr>
+  <tr><td>The case numbers on your list (case type, number and year only, not your labels, notes or folders)</td><td>So the orders of those cases can be read ahead of time and their summaries are ready when you ask</td></tr>
 </table>
 <p>We do not collect your name, your email address, your contacts, your location, or your clients' details, and we do not use advertising or analytics trackers in the app.</p>
 
@@ -39,15 +40,16 @@
   <li>When an order is summarised, its text is sent to our server and from there to <b>Anthropic</b>, whose Claude AI model reads it and returns the summary. Anthropic processes the text on our behalf to provide that reading.</li>
   <li>Orders of the Delhi High Court are public court records. To avoid reading the same order twice, we store the summary and reading of each order against a fingerprint of its text, and give that same result to any other Proxy Pro user who has the identical order. The stored reading is not linked to you or to your case list.</li>
   <li>Only orders downloaded from the court's website for your tracked cases are sent. Your own documents are never sent.</li>
+  <li>To have summaries ready, we may download the orders of the cases on Proxy Pro users' lists from the court's website ourselves and have them read in advance in the same way. Those readings are stored like any other: against the order's fingerprint, not linked to you.</li>
 </ul>
 
 <h2>How the cause list works</h2>
-<p>Our server reads the court's published cause lists once and keeps their text until the listed day has passed. Your app downloads that text and looks for your cases <b>on your own computer</b>. Your list of cases is never sent to us for this.</p>
+<p>Our server reads the court's published cause lists once and keeps their text until the listed day has passed. Your app downloads that text and looks for your cases <b>on your own computer</b>. This matching does not use the case numbers sent to us.</p>
 
 <h2>Who we share information with</h2>
 <table>
   <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
-  <tr><td>Supabase (database and server, hosted in Mumbai, India)</td><td>Your mobile number, subscription status, usage count; stored order readings</td><td>Runs Proxy Pro's accounts and server</td></tr>
+  <tr><td>Supabase (database and server, hosted in Mumbai, India)</td><td>Your mobile number, subscription status, usage count, the case numbers on your list; stored order readings</td><td>Runs Proxy Pro's accounts and server</td></tr>
   <tr><td>Anthropic</td><td>The text of orders being read</td><td>AI reading of the order</td></tr>
   <tr><td>Razorpay</td><td>Your mobile number and the subscription you start; you give your UPI details to Razorpay directly</td><td>Collecting the monthly payment</td></tr>
   <tr><td>MSG91</td><td>Your mobile number and the one-time code</td><td>Sending the sign-in SMS</td></tr>
