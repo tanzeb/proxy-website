@@ -53,3 +53,6 @@ th { background: var(--surface); font-weight: 600; }
 footer { border-top: 1px solid var(--line); padding: 28px 24px 40px; text-align: center; font-size: 0.86rem; color: var(--muted); }
 footer p { margin: 0 0 8px; }
 footer a { color: var(--muted); }
+.shots > li { margin-bottom: 28px; }
+.shots figure { margin: 12px 0 0; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
